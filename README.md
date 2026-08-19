@@ -65,6 +65,14 @@ The report is generated dynamically from the information entered through the bro
 No external framework was required for the implementation.
 
 ---
+## Watch the Exercise 1 - Demo Video
+VIDEO LINK
+https://drive.google.com/file/d/1wHbHvcHW3PUi0XAf2tGvsMzyUc0nHr8Q/view?usp=sharing
+
+## Watch the Exercise 2 - Demo Video
+VIDEO LINK
+https://drive.google.com/file/d/1TNm82kgmnHX2z9GUgz58HNo1GXFxfxGM/view?usp=sharing
+
 
 ## Project Structure
 
