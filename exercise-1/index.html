@@ -1,0 +1,1766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Medical and Travel Expense Request"
+    >
+
+    <title>Medical & Travel Expense Request</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+<div class="app">
+
+    <!-- ================================================= -->
+    <!-- APPLICATION HEADER -->
+    <!-- ================================================= -->
+
+    <header class="app-header">
+
+        <div class="pdf-logo-section">
+
+            <img
+                src="assets/wcb-logo.png"
+                alt="Workers Compensation Board of Manitoba"
+                class="pdf-logo"
+                onerror="this.style.display='none';"
+            >
+
+        </div>
+
+
+        <div class="pdf-contact-section">
+
+            <div>333 Broadway</div>
+
+            <div>Winnipeg, MB R3C 4W3</div>
+
+            <div>Phone: (204) 954-4321</div>
+
+            <div>Toll Free: 1-855-954-4321</div>
+
+            <div>wcb.mb.ca</div>
+
+        </div>
+
+
+        <div class="pdf-title-section">
+
+            <h1>
+                Medical & Travel Expense
+                <br>
+                Request
+            </h1>
+
+            <div class="claim-box">
+
+                Claim No.
+
+                <strong id="headerClaimNumber">
+                    -
+                </strong>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN FORM -->
+    <!-- ================================================= -->
+
+    <main class="form-container">
+
+
+        <div class="page-intro">
+
+            <div>
+
+                <span class="eyebrow">
+                    EXPENSE REIMBURSEMENT
+                </span>
+
+                <h2>
+                    Complete your expense request
+                </h2>
+
+                <p>
+                    Enter the worker information and add each
+                    medical or travel expense. You can submit
+                    each section individually before generating
+                    the final report.
+                </p>
+
+            </div>
+
+
+            <div class="progress-card">
+
+                <strong id="progressText">
+                    0 / 7
+                </strong>
+
+                <span>
+                    Sections completed
+                </span>
+
+                <div class="progress-track">
+
+                    <div
+                        id="progressBar"
+                        class="progress-bar"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- 01 WORKER INFORMATION -->
+        <!-- ================================================= -->
+
+        <section
+            class="card"
+            id="workerSection"
+        >
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Worker Information
+                        </h2>
+
+                        <p>
+                            Enter the basic claim information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="workerStatus"
+                    class="status-badge pending"
+                >
+                    Pending
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="workerName">
+                        Worker Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="workerName"
+                        placeholder="Enter worker name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="claimNumber">
+                        Claim Number
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="claimNumber"
+                        placeholder="Enter claim number"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitWorkerInformation()"
+                >
+                    ✓ Save Worker Information
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- 02 PRESCRIPTION DRUGS -->
+        <!-- ================================================= -->
+
+        <section class="card">
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Prescription Drugs
+                        </h2>
+
+                        <p>
+                            Add prescription medication expenses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="prescriptionStatus"
+                    class="status-badge pending"
+                >
+                    No entries
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="drugName">
+                        Drug Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="drugName"
+                        placeholder="Example: Naproxen"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="prescriptionDate">
+                        Prescription Date
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="prescriptionDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="prescriptionPurchaseDate">
+                        Date Purchased
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="prescriptionPurchaseDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="prescriptionProvider">
+                        Healthcare Provider Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="prescriptionProvider"
+                        placeholder="Example: Dr. Best"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="prescriptionAmount">
+                        Paid Amount
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="prescriptionAmount"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addPrescriptionBtn"
+                >
+                    + Add Prescription
+                </button>
+
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitExpenseSection('prescriptions')"
+                >
+                    ✓ Submit Section
+                </button>
+
+            </div>
+
+
+            <div
+                id="prescriptionEntries"
+                class="entries-container"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- 03 OTC DRUGS -->
+        <!-- ================================================= -->
+
+        <section class="card">
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Over-the-Counter Drugs
+                        </h2>
+
+                        <p>
+                            Add non-prescription medication expenses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="otcStatus"
+                    class="status-badge pending"
+                >
+                    No entries
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="otcDrugName">
+                        Drug Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="otcDrugName"
+                        placeholder="Example: Advil"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="otcDate">
+                        Date Purchased
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="otcDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="otcAmount">
+                        Paid Amount
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="otcAmount"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="otcSeller">
+                        Seller's Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="otcSeller"
+                        placeholder="Example: Shoppers Drug Mart"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="otcReason">
+                        Reason for Purchasing
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="otcReason"
+                        placeholder="Example: Pain relief"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addOTCBtn"
+                >
+                    + Add OTC Drug
+                </button>
+
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitExpenseSection('otcDrugs')"
+                >
+                    ✓ Submit Section
+                </button>
+
+            </div>
+
+
+            <div
+                id="otcEntries"
+                class="entries-container"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- 04 MEDICAL SUPPLIES -->
+        <!-- ================================================= -->
+
+        <section class="card">
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Bandages, Braces or Other Medical Supplies
+                        </h2>
+
+                        <p>
+                            Add eligible medical supply purchases.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="supplyStatus"
+                    class="status-badge pending"
+                >
+                    No entries
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="supplyItem">
+                        Item Purchased
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="supplyItem"
+                        placeholder="Example: Tensor bandage"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="supplyDate">
+                        Date Purchased
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="supplyDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="supplyPrescribed">
+                        Was this Prescribed?
+                        <span>*</span>
+                    </label>
+
+                    <select id="supplyPrescribed">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Yes">
+                            Yes
+                        </option>
+
+                        <option value="No">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="supplyProvider">
+                        Healthcare Provider Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="supplyProvider"
+                        placeholder="Provider name"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="supplyAmount">
+                        Paid Amount
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="supplyAmount"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="supplySeller">
+                        Seller's Name
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="supplySeller"
+                        placeholder="Seller name"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addSupplyBtn"
+                >
+                    + Add Medical Supply
+                </button>
+
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitExpenseSection('medicalSupplies')"
+                >
+                    ✓ Submit Section
+                </button>
+
+            </div>
+
+
+            <div
+                id="supplyEntries"
+                class="entries-container"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- 05 PARKING -->
+        <!-- ================================================= -->
+
+        <section class="card">
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        05
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Parking for Medical Appointments
+                        </h2>
+
+                        <p>
+                            Add parking expenses related to appointments.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="parkingStatus"
+                    class="status-badge pending"
+                >
+                    No entries
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group full">
+
+                    <label for="parkingAddress">
+                        Address of Healthcare Provider /
+                        Medical Facility
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="parkingAddress"
+                        placeholder="Enter facility address"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="parkingDate">
+                        Date
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="parkingDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="parkingAmount">
+                        Paid Amount
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="parkingAmount"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="meterUsed">
+                        Meter Used?
+                        <span>*</span>
+                    </label>
+
+                    <select id="meterUsed">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Yes">
+                            Yes
+                        </option>
+
+                        <option value="No">
+                            No
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="meterNumber">
+                        Meter Number
+                    </label>
+
+                    <input
+                        type="text"
+                        id="meterNumber"
+                        placeholder="Optional"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addParkingBtn"
+                >
+                    + Add Parking
+                </button>
+
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitExpenseSection('parking')"
+                >
+                    ✓ Submit Section
+                </button>
+
+            </div>
+
+
+            <div
+                id="parkingEntries"
+                class="entries-container"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- 06 MILEAGE -->
+        <!-- ================================================= -->
+
+        <section class="card">
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        06
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Mileage to Medical Appointments
+                        </h2>
+
+                        <p>
+                            Add round-trip mileage details.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="mileageStatus"
+                    class="status-badge pending"
+                >
+                    No entries
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="mileageDate">
+                        Appointment Date
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="mileageDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="providerAddress">
+                        Address of Healthcare Provider /
+                        Medical Facility
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="providerAddress"
+                        placeholder="Provider / facility address"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="workplaceAddress">
+                        Address of Workplace
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="workplaceAddress"
+                        placeholder="Workplace address"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="kilometers">
+                        Number of km (Round Trip)
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="kilometers"
+                        min="0"
+                        step="0.1"
+                        placeholder="Example: 20"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addMileageBtn"
+                >
+                    + Add Mileage
+                </button>
+
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitExpenseSection('mileage')"
+                >
+                    ✓ Submit Section
+                </button>
+
+            </div>
+
+
+            <div
+                id="mileageEntries"
+                class="entries-container"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- 07 TRANSPORTATION -->
+        <!-- ================================================= -->
+
+        <section class="card">
+
+            <div class="card-heading">
+
+                <div class="heading-left">
+
+                    <div class="section-number">
+                        07
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Bus or Taxi Fare for Medical Appointments
+                        </h2>
+
+                        <p>
+                            Add bus or taxi transportation expenses.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <span
+                    id="transportStatus"
+                    class="status-badge pending"
+                >
+                    No entries
+                </span>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="transportDate">
+                        Appointment Date
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="transportDate"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="startingPoint">
+                        Address of Starting Point
+                    </label>
+
+                    <input
+                        type="text"
+                        id="startingPoint"
+                        placeholder="Starting address"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label for="transportProvider">
+                        Address of Healthcare Provider /
+                        Medical Facility
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="transportProvider"
+                        placeholder="Provider / facility address"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="transportType">
+                        Bus or Taxi
+                        <span>*</span>
+                    </label>
+
+                    <select id="transportType">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Bus">
+                            Bus
+                        </option>
+
+                        <option value="Taxi">
+                            Taxi
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="transportFare">
+                        Total Fare Paid
+                        <span>*</span>
+                    </label>
+
+                    <input
+                        type="number"
+                        id="transportFare"
+                        min="0"
+                        step="0.01"
+                        placeholder="0.00"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="section-actions">
+
+                <button
+                    type="button"
+                    class="add-btn"
+                    id="addTransportBtn"
+                >
+                    + Add Bus / Taxi Expense
+                </button>
+
+
+                <button
+                    type="button"
+                    class="submit-section-btn"
+                    onclick="submitExpenseSection('transportation')"
+                >
+                    ✓ Submit Section
+                </button>
+
+            </div>
+
+
+            <div
+                id="transportEntries"
+                class="entries-container"
+            ></div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- FINAL ACTIONS -->
+        <!-- ================================================= -->
+
+        <section class="final-actions">
+
+            <div>
+
+                <span class="eyebrow light">
+                    FINAL STEP
+                </span>
+
+                <h2>
+                    Generate your expense report
+                </h2>
+
+                <p>
+                    Review all submitted information and
+                    generate the printable two-page report.
+                </p>
+
+            </div>
+
+
+            <div class="button-container">
+
+                <button
+                    type="button"
+                    id="generateBtn"
+                    class="generate-btn"
+                >
+                    Generate Report
+                </button>
+
+
+                <button
+                    type="button"
+                    id="printBtn"
+                    class="print-btn"
+                    disabled
+                >
+                    Print / Save PDF
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <div
+            id="successMessage"
+            class="success-message"
+            role="status"
+        ></div>
+
+
+    </main>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- GENERATED REPORT -->
+<!-- ================================================= -->
+
+<div id="report">
+
+
+    <!-- ================================================= -->
+    <!-- PAGE 1 -->
+    <!-- ================================================= -->
+
+    <section class="report-page">
+
+        <header class="report-header">
+
+            <div class="wcb-section">
+
+                <img
+                    src="assets/wcb-logo.png"
+                    class="report-logo"
+                    alt="Workers Compensation Board of Manitoba"
+                >
+
+            </div>
+
+
+            <div class="contact-section">
+
+                333 Broadway
+                <br>
+
+                Winnipeg, MB R3C 4W3
+                <br>
+
+                Phone: (204) 954-4321
+                <br>
+
+                Toll Free: 1-855-954-4321
+                <br>
+
+                wcb.mb.ca
+
+            </div>
+
+
+            <div class="title-section">
+
+                <h2>
+                    Medical & Travel
+                    <br>
+                    Expense Request
+                </h2>
+
+
+                <div class="claim-box">
+
+                    Claim No.
+
+                    <strong id="displayClaimNumber">
+                        -
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <p class="introduction">
+
+            <strong id="displayWorkerName">
+                -
+            </strong>
+
+            requested reimbursement for the
+            following medical and/or travel expenses:
+
+        </p>
+
+
+        <!-- PRESCRIPTIONS -->
+
+        <section class="expense-section">
+
+            <h2>
+                Prescription Drugs
+            </h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Drug Name</th>
+
+                        <th>Prescription Date</th>
+
+                        <th>Date Purchased</th>
+
+                        <th>Healthcare Provider Name</th>
+
+                        <th>Paid Amount</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="prescriptionTable"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- OTC -->
+
+        <section class="expense-section">
+
+            <h2>
+                Over-the-Counter Drugs
+            </h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Drug Name</th>
+
+                        <th>Date Purchased</th>
+
+                        <th>Paid Amount</th>
+
+                        <th>Seller's Name</th>
+
+                        <th>Reason for Purchasing</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="otcTable"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- SUPPLIES -->
+
+        <section class="expense-section">
+
+            <h2>
+                Bandages, Braces or Other Medical Supplies
+            </h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>Item Purchased</th>
+
+                        <th>Date Purchased</th>
+
+                        <th>Was this Prescribed?</th>
+
+                        <th>Healthcare Provider Name</th>
+
+                        <th>Paid Amount</th>
+
+                        <th>Seller's Name</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="suppliesTable"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- PARKING -->
+
+        <section class="expense-section">
+
+            <h2>
+                Parking for Medical Appointments
+            </h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Address of Healthcare
+                            Provider/Medical Facility
+                        </th>
+
+                        <th>Date</th>
+
+                        <th>Paid Amount</th>
+
+                        <th>Meter Used?</th>
+
+                        <th>Meter Number</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="parkingTable"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <!-- MILEAGE -->
+
+        <section class="expense-section">
+
+            <h2>
+                Mileage to Medical Appointments
+            </h2>
+
+
+            <p class="note">
+
+                The WCB will generally reimburse only
+                those transportation costs which are in
+                excess of costs that would be incurred by
+                the worker while travelling to and from work.
+
+            </p>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Appointment Date
+                        </th>
+
+                        <th>
+                            Address of Healthcare
+                            Provider/Medical Facility
+                        </th>
+
+                        <th>
+                            Address of Workplace
+                        </th>
+
+                        <th>
+                            Number of km (Round Trip)
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="mileageTable"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <div class="report-total">
+
+            <span>
+                Total Expense Amount
+            </span>
+
+            <strong id="totalAmount1">
+                $0.00
+            </strong>
+
+        </div>
+
+
+        <footer class="report-footer">
+
+            <span>
+                Worker App ID: 712041
+            </span>
+
+            <span id="submittedDate1">
+                Submitted:
+            </span>
+
+            <span>
+                Page 1 of 2
+            </span>
+
+        </footer>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- PAGE 2 -->
+    <!-- ================================================= -->
+
+    <section class="report-page">
+
+        <section class="expense-section">
+
+            <h2>
+                Bus or Taxi Fare for Medical Appointments*
+            </h2>
+
+
+            <p class="note">
+
+                *Note: Pre-approval is required from
+                your WCB representative to claim taxi
+                fare(s).
+
+            </p>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Appointment Date
+                        </th>
+
+                        <th>
+                            Address of Starting Point
+                        </th>
+
+                        <th>
+                            Address of Healthcare
+                            Provider/Medical Facility
+                        </th>
+
+                        <th>
+                            Bus or Taxi
+                        </th>
+
+                        <th>
+                            Total Fare Paid
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="transportTable"></tbody>
+
+            </table>
+
+        </section>
+
+
+        <div class="report-summary">
+
+            <h3>
+                Expense Summary
+            </h3>
+
+
+            <div class="summary-grid">
+
+                <div>
+
+                    <span>
+                        Prescription Drugs
+                    </span>
+
+                    <strong id="summaryPrescription">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        OTC Drugs
+                    </span>
+
+                    <strong id="summaryOTC">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Medical Supplies
+                    </span>
+
+                    <strong id="summarySupplies">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Parking
+                    </span>
+
+                    <strong id="summaryParking">
+                        $0.00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>
+                        Bus / Taxi
+                    </span>
+
+                    <strong id="summaryTransport">
+                        $0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="totalAmount2">
+                    $0.00
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="privacy-section">
+
+            <input
+                type="checkbox"
+                id="privacyCheck"
+                checked
+            >
+
+
+            <label for="privacyCheck">
+
+                I understand that the
+                <a href="#privacy">
+                    Privacy Notice
+                </a>
+                applies to the personal information
+                collected in this document.
+
+            </label>
+
+        </div>
+
+
+        <footer class="report-footer">
+
+            <span>
+                Worker App ID: 712041
+            </span>
+
+            <span id="submittedDate2">
+                Submitted:
+            </span>
+
+            <span>
+                Page 2 of 2
+            </span>
+
+        </footer>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

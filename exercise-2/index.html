@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Worker Progress Report</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =========================================================
+         APPLICATION
+    ========================================================== -->
+
+    <div class="app">
+
+        <!-- =====================================================
+             INPUT PANEL
+        ====================================================== -->
+
+        <section class="form-panel">
+
+            <div class="form-header">
+                <img
+                    src="assets/wcb-logo.png"
+                    alt="Workers Compensation Board of Manitoba"
+                    class="form-logo"
+                >
+
+                <div>
+                    <h1>Worker Progress Report</h1>
+                    <p>Enter the information below to generate the report.</p>
+                </div>
+            </div>
+
+
+            <!-- WORKER INFORMATION -->
+
+            <div class="form-section">
+
+                <h2>Worker Information</h2>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="workerName">
+                            Worker Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="workerName"
+                            value="Madeleine Willson"
+                        >
+                    </div>
+
+
+                    <div class="field">
+                        <label for="claimNumber">
+                            Claim Number
+                        </label>
+
+                        <input
+                            type="text"
+                            id="claimNumber"
+                            value="20042047 WP"
+                        >
+                    </div>
+
+
+                    <div class="field">
+                        <label for="reportDate">
+                            Report Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="reportDate"
+                            value="2024-03-15"
+                        >
+                    </div>
+
+
+                    <div class="field">
+                        <label for="workerAppId">
+                            Worker App ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="workerAppId"
+                            value="712041"
+                        >
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RETURN TO WORK -->
+
+            <div class="form-section">
+
+                <h2>Return to Work</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+
+                        <label for="returnStatus">
+                            Return to work status
+                        </label>
+
+                        <select id="returnStatus">
+
+                            <option value="I have not returned to work">
+                                I have not returned to work
+                            </option>
+
+                            <option value="I returned to work">
+                                I returned to work
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="returnDate">
+                            Returned to work on
+                        </label>
+
+                        <input
+                            type="date"
+                            id="returnDate"
+                            value=""
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="expectedReturnDate">
+                            Expected return date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="expectedReturnDate"
+                            value=""
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="workDuties">
+                            Work duties
+                        </label>
+
+                        <select id="workDuties">
+
+                            <option>
+                                Full duties, regular hours
+                            </option>
+
+                            <option>
+                                Full duties, reduced hours
+                            </option>
+
+                            <option>
+                                Modified duties, regular hours
+                            </option>
+
+                            <option>
+                                Modified duties, reduced hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="missedWork">
+                            Missed time from work
+                        </label>
+
+                        <select id="missedWork">
+
+                            <option>
+                                I have not missed time from work
+                            </option>
+
+                            <option>
+                                I have missed time from work
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full-width">
+
+                        <label for="returnConcerns">
+                            Concerns about returning to work
+                        </label>
+
+                        <textarea id="returnConcerns">Other:</textarea>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="employerContact">
+                            Employer contact
+                        </label>
+
+                        <input
+                            type="text"
+                            id="employerContact"
+                            value=""
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="employerContactDate">
+                            Contact date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="employerContactDate"
+                            value=""
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RECOVERY -->
+
+            <div class="form-section">
+
+                <h2>Recovery</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+
+                        <label for="recoveryStatus">
+                            Recovery status
+                        </label>
+
+                        <select id="recoveryStatus">
+
+                            <option>
+                                I have not fully recovered from my workplace injury.
+                            </option>
+
+                            <option>
+                                I have fully recovered from my workplace injury.
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full-width">
+
+                        <label for="recoveryComments">
+                            Comments about recovery
+                        </label>
+
+                        <textarea id="recoveryComments">Testing Testing</textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RETURN TO WORK PROGRESS -->
+
+            <div class="form-section">
+
+                <h2>Progress</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+
+                        <label for="returnProgress">
+                            My return to work is going
+                        </label>
+
+                        <textarea id="returnProgress">Terrible. Testing Testing</textarea>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="painRating">
+                            Current pain/discomfort (1-10)
+                        </label>
+
+                        <select id="painRating">
+
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="workingStatus">
+                            I am working
+                        </label>
+
+                        <select id="workingStatus">
+
+                            <option>
+                                Full duties
+                            </option>
+
+                            <option>
+                                Reduced hours
+                            </option>
+
+                            <option>
+                                Modified duties
+                            </option>
+
+                            <option>
+                                Modified duties and reduced hours
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEDICAL TREATMENT -->
+
+            <div class="form-section">
+
+                <h2>Medical Treatment</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+
+                        <label for="treatmentStatus">
+                            Medical treatment
+                        </label>
+
+                        <select id="treatmentStatus">
+
+                            <option>
+                                I am not continuing to receive medical treatment for my workplace injury.
+                            </option>
+
+                            <option>
+                                I am continuing to receive medical treatment for my workplace injury.
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="medicalProviderType">
+                            Medical Provider Type
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicalProviderType"
+                            value="Doctor"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="medicalProviderName">
+                            Medical Provider Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicalProviderName"
+                            value=""
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="lastTreatmentDate">
+                            Last Treatment Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="lastTreatmentDate"
+                        >
+
+                    </div>
+
+
+                    <div class="field">
+
+                        <label for="physioFrequency">
+                            Chiropractor / Physiotherapist Frequency
+                        </label>
+
+                        <input
+                            type="text"
+                            id="physioFrequency"
+                            value=""
+                        >
+
+                    </div>
+
+
+                    <div class="field full-width">
+
+                        <label for="nextTreatment">
+                            Next medical treatment
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nextTreatment"
+                            value=""
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- HOME EXERCISES -->
+
+            <div class="form-section">
+
+                <h2>Home Exercises</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+
+                        <label for="exerciseStatus">
+                            Home exercises
+                        </label>
+
+                        <select id="exerciseStatus">
+
+                            <option>
+                                I am not doing home exercises for my workplace injury.
+                            </option>
+
+                            <option>
+                                I am doing home exercises for my workplace injury.
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full-width">
+
+                        <label for="exerciseList">
+                            Exercises being done
+                        </label>
+
+                        <textarea id="exerciseList"></textarea>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MEDICATION -->
+
+            <div class="form-section">
+
+                <h2>Medication</h2>
+
+                <div class="form-grid">
+
+                    <div class="field full-width">
+
+                        <label for="medicationStatus">
+                            Medication status
+                        </label>
+
+                        <select id="medicationStatus">
+
+                            <option>
+                                I am not taking medication for my workplace injury.
+                            </option>
+
+                            <option>
+                                I am taking medication for my workplace injury.
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="field full-width">
+
+                        <label for="medicationName">
+                            Name of prescribed medication
+                        </label>
+
+                        <input
+                            type="text"
+                            id="medicationName"
+                            value=""
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ADDITIONAL INFORMATION -->
+
+            <div class="form-section">
+
+                <h2>Other Information</h2>
+
+                <div class="field">
+
+                    <label for="additionalInformation">
+                        Additional information about claim/injury
+                    </label>
+
+                    <textarea
+                        id="additionalInformation"
+                    >No info Testing Testing</textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTIONS -->
+
+            <div class="action-area">
+
+                <button
+                    type="button"
+                    id="generateBtn"
+                    class="primary-btn"
+                >
+                    Generate Report
+                </button>
+
+                <button
+                    type="button"
+                    id="resetBtn"
+                    class="secondary-btn"
+                >
+                    Reset
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================================
+             REPORT
+        ====================================================== -->
+
+        <section
+            id="report"
+            class="report"
+        >
+
+            <!-- =================================================
+                 PAGE 1
+            ================================================== -->
+
+            <div class="report-page">
+
+                <header class="report-header">
+
+                    <img
+                        src="assets/wcb-logo.png"
+                        alt="WCB Manitoba"
+                        class="report-logo"
+                    >
+
+                    <div class="header-contact">
+
+                        <strong>
+                            Workers Compensation Board of Manitoba
+                        </strong>
+
+                        <div>
+                            333 Broadway
+                        </div>
+
+                        <div>
+                            Winnipeg, MB R3C 4W3
+                        </div>
+
+                        <div>
+                            Phone: (204) 954-4321
+                        </div>
+
+                        <div>
+                            Toll Free: 1-855-954-4321
+                        </div>
+
+                        <div>
+                            wcb.mb.ca
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <div class="claim-line">
+
+                    <span>
+                        Claim No.
+                    </span>
+
+                    <strong id="claimNumberOutput">
+                        20042047 WP
+                    </strong>
+
+                </div>
+
+
+                <div class="report-title">
+
+                    <h1>
+                        Worker Progress Report
+                    </h1>
+
+                    <div id="reportDateOutput">
+                        March 15, 2024
+                    </div>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Return to Work
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            My return to work is going:
+                        </strong>
+
+                        <div
+                            id="returnProgressOutput"
+                            class="answer-box"
+                        >
+                            Terrible. Testing Testing
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            I am working:
+                        </strong>
+
+                        <div id="workingStatusOutput">
+                            Full duties
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            I have:
+                        </strong>
+
+                        <div id="missedWorkOutput">
+                            I have not missed time from work
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Return to work status:
+                        </strong>
+
+                        <div id="returnStatusOutput">
+                            I have not returned to work
+                        </div>
+
+                    </div>
+
+
+                    <div class="two-column-report">
+
+                        <div>
+
+                            <strong>
+                                Returned to work on:
+                            </strong>
+
+                            <span id="returnDateOutput">
+                                -
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Expected return date:
+                            </strong>
+
+                            <span id="expectedReturnDateOutput">
+                                -
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Work duties:
+                        </strong>
+
+                        <div id="workDutiesOutput">
+                            Full duties, regular hours
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Concerns about returning to work:
+                        </strong>
+
+                        <div
+                            id="returnConcernsOutput"
+                            class="answer-box"
+                        >
+                            Other:
+                        </div>
+
+                    </div>
+
+
+                    <div class="two-column-report">
+
+                        <div>
+
+                            <strong>
+                                Employer contact:
+                            </strong>
+
+                            <span id="employerContactOutput">
+                                -
+                            </span>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Date:
+                            </strong>
+
+                            <span id="employerContactDateOutput">
+                                -
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Recovery
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Recovery status:
+                        </strong>
+
+                        <div id="recoveryStatusOutput">
+                            I have not fully recovered from my workplace injury.
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Comments about my recovery:
+                        </strong>
+
+                        <div
+                            id="recoveryCommentsOutput"
+                            class="answer-box"
+                        >
+                            Testing Testing
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <footer class="report-footer">
+
+                    <div>
+                        Worker App ID:
+                        <span id="workerAppIdFooter1">
+                            712041
+                        </span>
+
+                        Submitted:
+                        <span id="submittedDate1">
+                            -
+                        </span>
+                    </div>
+
+                    <div>
+                        Page 1 of 3
+                    </div>
+
+                </footer>
+
+            </div>
+
+
+            <!-- =================================================
+                 PAGE 2
+            ================================================== -->
+
+            <div class="report-page">
+
+                <header class="report-header">
+
+                    <img
+                        src="assets/wcb-logo.png"
+                        alt="WCB Manitoba"
+                        class="report-logo"
+                    >
+
+                    <div class="header-contact">
+
+                        <strong>
+                            Workers Compensation Board of Manitoba
+                        </strong>
+
+                        <div>
+                            333 Broadway
+                        </div>
+
+                        <div>
+                            Winnipeg, MB R3C 4W3
+                        </div>
+
+                        <div>
+                            Phone: (204) 954-4321
+                        </div>
+
+                        <div>
+                            Toll Free: 1-855-954-4321
+                        </div>
+
+                        <div>
+                            wcb.mb.ca
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <div class="claim-line">
+
+                    <span>
+                        Claim No.
+                    </span>
+
+                    <strong id="claimNumberOutput2">
+                        20042047 WP
+                    </strong>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Pain / Discomfort
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            I rate my current pain/discomfort on a scale of 1-10,
+                            where 1 is no pain and 10 is severe pain.
+                        </strong>
+
+                        <div class="pain-scale">
+
+                            <span>1</span>
+                            <span>2</span>
+                            <span>3</span>
+                            <span>4</span>
+                            <span>5</span>
+                            <span>6</span>
+                            <span>7</span>
+                            <span>8</span>
+                            <span>9</span>
+                            <span>10</span>
+
+                        </div>
+
+                        <div class="selected-pain">
+
+                            Selected:
+                            <strong id="painRatingOutput">
+                                1
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Medical Treatment
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Medical treatment:
+                        </strong>
+
+                        <div id="treatmentStatusOutput">
+                            I am continuing to receive medical treatment for my workplace injury.
+                        </div>
+
+                    </div>
+
+
+                    <div class="two-column-report">
+
+                        <div>
+
+                            <strong>
+                                Medical Provider Type:
+                            </strong>
+
+                            <span id="medicalProviderTypeOutput">
+                                Doctor
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Medical Provider Name:
+                            </strong>
+
+                            <span id="medicalProviderNameOutput">
+                                -
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="two-column-report">
+
+                        <div>
+
+                            <strong>
+                                Last medical treatment:
+                            </strong>
+
+                            <span id="lastTreatmentDateOutput">
+                                -
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <strong>
+                                Provider:
+                            </strong>
+
+                            <span id="lastProviderOutput">
+                                -
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            I am attending a Chiropractor or Physiotherapist:
+                        </strong>
+
+                        <div id="physioFrequencyOutput">
+                            -
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            My next medical treatment is:
+                        </strong>
+
+                        <div id="nextTreatmentOutput">
+                            -
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Home Exercises
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Home exercise status:
+                        </strong>
+
+                        <div id="exerciseStatusOutput">
+                            I am not doing home exercises for my workplace injury.
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            List the exercises you are doing:
+                        </strong>
+
+                        <div
+                            id="exerciseListOutput"
+                            class="answer-box"
+                        >
+                            -
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Other Information
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Additional information about my claim/injury:
+                        </strong>
+
+                        <div
+                            id="additionalInformationOutput"
+                            class="answer-box"
+                        >
+                            No info Testing Testing
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <footer class="report-footer">
+
+                    <div>
+                        Worker App ID:
+                        <span id="workerAppIdFooter2">
+                            712041
+                        </span>
+
+                        Submitted:
+                        <span id="submittedDate2">
+                            -
+                        </span>
+                    </div>
+
+                    <div>
+                        Page 2 of 3
+                    </div>
+
+                </footer>
+
+            </div>
+
+
+            <!-- =================================================
+                 PAGE 3
+            ================================================== -->
+
+            <div class="report-page">
+
+                <header class="report-header">
+
+                    <img
+                        src="assets/wcb-logo.png"
+                        alt="WCB Manitoba"
+                        class="report-logo"
+                    >
+
+                    <div class="header-contact">
+
+                        <strong>
+                            Workers Compensation Board of Manitoba
+                        </strong>
+
+                        <div>
+                            333 Broadway
+                        </div>
+
+                        <div>
+                            Winnipeg, MB R3C 4W3
+                        </div>
+
+                        <div>
+                            Phone: (204) 954-4321
+                        </div>
+
+                        <div>
+                            Toll Free: 1-855-954-4321
+                        </div>
+
+                        <div>
+                            wcb.mb.ca
+                        </div>
+
+                    </div>
+
+                </header>
+
+
+                <div class="claim-line">
+
+                    <span>
+                        Claim No.
+                    </span>
+
+                    <strong id="claimNumberOutput3">
+                        20042047 WP
+                    </strong>
+
+                </div>
+
+
+                <div class="report-block">
+
+                    <h2>
+                        Medication
+                    </h2>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Medication status:
+                        </strong>
+
+                        <div id="medicationStatusOutput">
+                            I am not taking medication for my workplace injury.
+                        </div>
+
+                    </div>
+
+
+                    <div class="question">
+
+                        <strong>
+                            Name of prescribed medication:
+                        </strong>
+
+                        <div id="medicationNameOutput">
+                            -
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="certification">
+
+                    <h2>
+                        Certification
+                    </h2>
+
+                    <p>
+                        I certify that the information given on this form is
+                        true, correct and complete to the best of my knowledge.
+                        I agree to notify the Workers Compensation Board of
+                        Manitoba immediately once I return to any form of work
+                        and/or employment.
+                    </p>
+
+                    <p>
+                        I understand that it is an offence to knowingly make a
+                        false statement to the WCB. I also understand that it is
+                        an offence to withhold information from WCB which affects
+                        my entitlement to compensation, including full or partial
+                        recovery from injury, ability to return to work, sources
+                        of additional income, and other relevant information.
+                    </p>
+
+                    <p>
+                        I understand that refusing to co-operate with, or follow
+                        my treatment, may result in the WCB reducing or suspending
+                        my benefits.
+                    </p>
+
+                    <p>
+                        I understand that the Privacy Notice applies to the
+                        personal information collected in this document.
+                    </p>
+
+                </div>
+
+
+                <div class="signature-area">
+
+                    <div class="signature-line">
+
+                        <span>
+                            Worker Name
+                        </span>
+
+                        <strong id="signatureWorkerName">
+                            Madeleine Willson
+                        </strong>
+
+                    </div>
+
+
+                    <div class="signature-line">
+
+                        <span>
+                            Claim Number
+                        </span>
+
+                        <strong id="signatureClaimNumber">
+                            20042047 WP
+                        </strong>
+
+                    </div>
+
+
+                    <div class="signature-line">
+
+                        <span>
+                            Report Date
+                        </span>
+
+                        <strong id="signatureDate">
+                            March 15, 2024
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <footer class="report-footer">
+
+                    <div>
+                        Worker App ID:
+                        <span id="workerAppIdFooter3">
+                            712041
+                        </span>
+
+                        Submitted:
+                        <span id="submittedDate3">
+                            -
+                        </span>
+                    </div>
+
+                    <div>
+                        Page 3 of 3
+                    </div>
+
+                </footer>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================================================
+         SUCCESS MESSAGE
+    ========================================================== -->
+
+    <div
+        id="successMessage"
+        class="success-message"
+    >
+        Report generated successfully.
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
